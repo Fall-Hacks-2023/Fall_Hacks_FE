@@ -46,7 +46,7 @@ export default function Register() {
           </div>
           <div className={styles["login-right-part"]}>
             <div className={styles["login-right-part-item-1"]}>
-              <h2>SFU LEAFS</h2>
+              <h2>Habit LEAFS</h2>
             </div>
             <form
               className={styles["login-right-part-item-3"]}
