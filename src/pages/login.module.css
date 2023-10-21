@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     color: #602283;
+    background-color: #696969;
 }
 .login-container{
     z-index: 2;
@@ -93,4 +94,18 @@
 }
 .login-change-page-button{
     cursor: pointer;
+}
+.error-box-login{
+    background-color: red;
+    width: 100%;
+
+}
+@media (max-width: 800px) {
+    .login-left-part{
+        flex: 0;
+        display: none;
+    }
+    .login-right-part{
+        border-radius: 20px;
+    }
 }

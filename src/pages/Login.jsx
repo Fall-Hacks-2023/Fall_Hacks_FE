@@ -1,15 +1,35 @@
 import React, { useState, useRef } from "react";
 import styles from "./login.module.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from '@chakra-ui/react'
+
+
+const backend = process.env.REACT_APP_BACKEND;
 
 export default function Login() {
   const textInputRef = useRef();
   const passwordInputRef = useRef();
   const navigate = useNavigate();
+  const [error,setError] = useState(null);
 
   const loginSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log("In the login submit handler");
+    try{
+      const {data} = axios.post("/auth/login",
+      {email:textInputRef.current.value,
+         password:passwordInputRef.current.value},
+         {withCredentials:true});
+    }
+    catch(err){
+      console.log(err);
+      setError(err);
+    }
   };
   return (
       <div className={styles["login-page"]}>
@@ -33,7 +53,12 @@ export default function Login() {
               <button type="submit">Sign in</button>
             </form>
             <div className={styles["login-right-part-item-4"]}>
-            {/*error*/}
+            {error?   <Alert className={styles["error-box-login"]} status='error'>
+                        <AlertIcon />
+                        {error}
+                      </Alert> 
+                      :
+                       null}
               <span className={styles["login-no-account-row"]}>
                 No account ?
                 <span
