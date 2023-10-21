@@ -16,7 +16,6 @@ export default function Register() {
   const ageRef = useRef();
   const passwordInputRef = useRef();
   const emailInputRef = useRef();
-  const passwordAgainInputRef = useRef();
   const [error,setError] = useState(null);
   const navigate = useNavigate();
 
@@ -63,8 +62,6 @@ export default function Register() {
               <input type="email" ref={emailInputRef}></input>
               <span>Password</span>
               <input type="password" ref={passwordInputRef}></input>
-              <span>Password again</span>
-              <input type="password" ref={passwordAgainInputRef}></input>
 
               <button type="submit">Sign Up</button>
             </form>
