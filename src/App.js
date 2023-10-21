@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 
 
 function App() {
+  
   return (
     <Routes>
         <Route path="/" element={<Home/>}/>
