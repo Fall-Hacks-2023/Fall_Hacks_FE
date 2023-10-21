@@ -6,7 +6,10 @@ import App from './App';
 import { RecoilRoot } from 'recoil';
 import { ChakraProvider } from '@chakra-ui/react';
 import axios from "axios";
-axios.defaults.baseURL = process.env.REACT_APP_BACKEND;
+export const axiosInstance = axios.create({
+  baseURL: process.env.REACT_APP_BACKEND,
+  withCredentials: true,
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

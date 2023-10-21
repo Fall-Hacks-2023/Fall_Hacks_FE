@@ -8,7 +8,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from '@chakra-ui/react'
-
+import { axiosInstance } from "..";
 
 const backend = process.env.REACT_APP_BACKEND;
 
@@ -20,15 +20,19 @@ export default function Login() {
 
   const loginSubmitHandler = async (e) => {
     e.preventDefault();
+    setError(null);
     try{
-      const {data} = axios.post("/auth/login",
+      const {data} = await axiosInstance.post("/auth/login",
       {email:textInputRef.current.value,
          password:passwordInputRef.current.value},
-         {withCredentials:true});
+         );
+      console.log(data);
+      navigate("/",{replace:true});
     }
     catch(err){
-      console.log(err);
-      setError(err);
+      console.log("here in error part");
+      console.log(err.response.data);
+      setError(err.response.data);
     }
   };
   return (
