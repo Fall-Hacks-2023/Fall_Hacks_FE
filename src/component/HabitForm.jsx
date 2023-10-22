@@ -62,7 +62,7 @@ const HabitForm = () => {
             Create a New Habit
         </Text>
         <Stack spacing={3}>
-            <FormControl>
+            <FormControl border={'none'}>
             <FormLabel>Title</FormLabel>
             <Input
                 type="text"
