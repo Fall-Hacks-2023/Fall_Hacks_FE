@@ -54,7 +54,7 @@ export default function Register() {
             >
               <span>First name</span>
               <input type="text" ref={firstNameRef}></input>
-              <span>First name</span>
+              <span>Last name</span>
               <input type="text" ref={lastNameRef}></input>
               <span>Age</span>
               <input type="number" ref={ageRef}></input>
