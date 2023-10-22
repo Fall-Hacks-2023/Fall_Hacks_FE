@@ -47,7 +47,32 @@
     background-color: #1a1c1ea9;
     border-radius: 20px;
 }
-.habit-row{
+.habit-headers > div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#remove-header{
+    flex: 0.4;
+    display: flex;
+    justify-content: flex-end;
+}
+.habit-row,.habit-headers{
+    margin: 30px 30px;
     display: flex;
     color: white;
+}
+.habit-title,.habit-date-1,.habit-date-2,.habit-progress{
+    flex: 1;
+}
+.habit-delete{
+    flex: 0.4;
+    display: flex;
+    justify-content: flex-end;
+}
+.habit-date-1,.habit-date-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
