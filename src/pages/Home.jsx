@@ -20,8 +20,6 @@ const Home = () => {
   }, []);
   return (
     <>
-   <List/>
-      </>
       <NavBar firstName={user? user.firstName : null} lastName={user? user.lastName: null} />
       {user ? <Dashboard /> : <Generic />}
     </>
