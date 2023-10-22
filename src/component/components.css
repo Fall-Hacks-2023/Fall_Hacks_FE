@@ -37,7 +37,6 @@
 .habits-cotainer{
     width: calc(100% -40px);
     margin: 20px 20px;
-    height: 400px;
     background-color: #1a1c1ea9 ;
     border-radius: 20px;
 }
@@ -46,4 +45,43 @@
     height: 400px;
     background-color: #1a1c1ea9;
     border-radius: 20px;
+}
+.habit-headers > div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#remove-header{
+    flex: 0.4;
+    display: flex;
+    justify-content: flex-end;
+}
+.habit-row,.habit-headers{
+    margin: 30px 30px;
+    display: flex;
+    color: white;
+}
+.habit-title,.habit-date-1,.habit-date-2,.habit-progress{
+    flex: 1;
+}
+.habit-delete{
+    cursor: pointer;
+    flex: 0.4;
+    display: flex;
+    justify-content: flex-end;
+}
+.habit-date-1,.habit-date-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.no-habit-found{
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
