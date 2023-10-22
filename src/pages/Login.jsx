@@ -22,6 +22,7 @@ export default function Login() {
     e.preventDefault();
     setError(null);
     try{
+      console.log("Beginning of login")
       const {data} = await axiosInstance.post("/auth/login",
       {email:textInputRef.current.value,
          password:passwordInputRef.current.value},
