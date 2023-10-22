@@ -51,22 +51,6 @@ const Sidebar = () => {
                     Home
                 </span>
             </motion.li>
-            <motion.li variants={listItemVariant} whileHover="onHover" className={styles["sidebar-item"]}>
-                <div className={`${styles["sidebar-icon-container"]} ${styles["item-two"]}`}>
-                    <IoIosSettings  className={styles["sidebar-icons"]}/>
-                </div>
-                <span>
-                    Profile
-                </span>
-            </motion.li>
-            <motion.li variants={listItemVariant} whileHover="onHover" className={styles["sidebar-item"]}>
-                <div className={`${styles["sidebar-icon-container"]} ${styles["item-three"]}`}>
-                    <FaStar className={styles["sidebar-icons"]}/>
-                </div>
-                <span>
-                    My Habits
-                </span>
-            </motion.li>
             <motion.li onClick={(e)=>{e.preventDefault(); logOut()}} variants={listItemVariant} whileHover="onHover" className={styles["sidebar-item"]}>
                 <div className={`${styles["sidebar-icon-container"]} ${styles["item-four"]}`}>
                     <IoMdExit className={styles["sidebar-icons"]}/>
