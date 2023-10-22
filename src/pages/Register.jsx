@@ -8,6 +8,7 @@ import {
   AlertDescription,
 } from '@chakra-ui/react'
 import { axiosInstance } from "..";
+import { passwordStrength } from 'check-password-strength';
 
 
 export default function Register() {
@@ -23,14 +24,27 @@ export default function Register() {
     e.preventDefault();
     setError(null);
     try{
-      const {data} = await axiosInstance.post("/auth/signup",
-      { firstName: firstNameRef.current.value,
-        lastName: lastNameRef.current.value,
-        age: ageRef.current.value
-        ,email:emailInputRef.current.value,
-         password:passwordInputRef.current.value},
-         );
-         navigate("/",{replace:true});
+      const firstName= firstNameRef.current.value;
+      const lastName = lastNameRef.current.value;
+      const age = ageRef.current.value;
+      const email =emailInputRef.current.value
+      const password =passwordInputRef.current.value;
+      if (age <0 || age >100){
+        setError("Invalid age");
+        return;
+      }
+      if (passwordStrength(password).value < 2 ){
+        setError("Weak Password");
+        return;
+      }
+      if (firstName && lastName && age && email && password){
+        const {data} = await axiosInstance.post("/auth/signup",
+        { firstName,lastName,age,email,password},);
+           navigate("/",{replace:true}); 
+      }
+      else{
+        setError("Please fill all inputs");
+      }
     }
     catch(err){
       console.log(err);
@@ -66,6 +80,12 @@ export default function Register() {
               <button type="submit">Sign Up</button>
             </form>
             <div className={styles["login-right-part-item-4"]}>
+            {error?   <Alert className={styles["error-box-login"]} status='error'>
+                        <AlertIcon />
+                        {error}
+                      </Alert> 
+                      :
+                       null}
               <span className={styles["login-no-account-row"]}>
                 Have an account ?
                 <span
