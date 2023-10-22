@@ -44,7 +44,7 @@ export default function Login() {
           </div>
           <div className={styles["login-right-part"]}>
             <div className={styles["login-right-part-item-1"]}>
-              <h2>SFU LEAFS</h2>
+              <h2>Habit Leaf</h2>
             </div>
             <form
               className={styles["login-right-part-item-3"]}

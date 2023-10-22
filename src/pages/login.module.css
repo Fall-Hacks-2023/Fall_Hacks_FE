@@ -4,11 +4,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #602283;
+    background-color: rgb(31, 31, 31);
+    color: #696969;
 }
 .login-container{
     z-index: 2;
-    width: 60%;
+    width: 35%;
     height: 80%;
     display: flex;
     align-items: center;
@@ -21,12 +22,12 @@
     justify-items: center;
     align-items: center;
     height: 100%;
-    background-color: #602283;
+    background-color: #0e5a1c;
     backdrop-filter: blur(20px);
 }
 .login-right-part{
-    flex: 1;
-    background-color: white;
+    flex: 4;
+    background-color: #121212;
     backdrop-filter: blur(20px);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
