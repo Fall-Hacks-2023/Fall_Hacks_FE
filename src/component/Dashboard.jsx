@@ -1,10 +1,14 @@
 import React from 'react'
-import Card from './Card'
+import "./components.css"
+import Sidebar from './Sidebar'
+import Panel from './Panel'
+
 
 export default function Dashboard() {
   return (
-    <div>
-        <Card/>
+    <div className='dashboard-container'>
+        <Sidebar/>
+        <Panel/>
     </div>
   )
 }
