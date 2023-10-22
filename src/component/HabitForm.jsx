@@ -14,8 +14,6 @@ import {
 } from '@chakra-ui/react';
 
 const HabitForm = () => {
-    const { colorMode } = useColorMode();
-    const textColor = colorMode === 'dark' ? 'white' : 'black';
 
     const [formData, setFormData] = useState({
         title: '',
@@ -39,9 +37,9 @@ const HabitForm = () => {
         });
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         console.log(formData);
-        axiosInstance
+        await axiosInstance
         .post(`/habit`, formData)
         .then((res) => {
             console.log(res);
@@ -49,6 +47,8 @@ const HabitForm = () => {
         .catch((err) => {
             console.log(err);
         });
+        
+        window.location.href = '/';
     };
 
     const selectStyle = {
