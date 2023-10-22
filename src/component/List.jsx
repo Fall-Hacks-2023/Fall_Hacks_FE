@@ -63,10 +63,10 @@ const List = () => {
               <div className="habit-row">
                 <div className="habit-title">{habit.title}</div>
                 <div className="habit-date-1">
-                  {habit.achievementDate.split("T")[0]}
+                {habit.dateCreated.split("T")[0]}
                 </div>
                 <div className="habit-date-2">
-                  {habit.dateCreated.split("T")[0]}
+                {habit.achievementDate.split("T")[0]}
                 </div>
                 <div className="habit-progress">
                   <Progress hasStripe value={progressPercentage} />
