@@ -35,8 +35,11 @@
     margin: 20px 20px;
 }
 .habits-cotainer{
+    width: calc(100% -40px);
+    margin: 20px 20px;
     height: 400px;
     background-color: #1a1c1ea9 ;
+    border-radius: 20px;
 }
 .stat-container-1,.stat-container-2{
     flex: 1;

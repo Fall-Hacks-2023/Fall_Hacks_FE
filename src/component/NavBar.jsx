@@ -1,30 +1,25 @@
 import React from 'react'
 import { Grid, GridItem } from "@chakra-ui/react";
 
-export default function NavBar() {
+export default function NavBar({firstName,lastName}) {
   return (
     <Grid
     templateColumns="repeat(5, 1fr)"
     gap={6}
-    h="35"
+    h="50"
     w="100%"
-    bg="#581584"
+    bg="#0e5a1c"
     margin={"auto"}
     display={"flex"}
     flexDirection={"row"}
-    justifyContent={"flex-end"}
+    alignItems={"center"}
+    justifyContent={"space-between"}
   >
-    <GridItem w="90%" h="10" color={"white"} marginLeft={20}>
-      Home
+     <GridItem color={"white"} marginLeft={50}>
+        Habit Leafs
     </GridItem>
-    <GridItem w="90%" h="10" color={"white"}>
-      About
-    </GridItem>
-    <GridItem w="90%" h="10" paddingLeft={"40"} color={"white"}>
-      Log In
-    </GridItem>
-    <GridItem w="90%" h="10" color={"white"}>
-      Sign Up
+    <GridItem color={"white"} marginRight={50}>
+        {firstName? firstName + ' ' + lastName: "Log In"}
     </GridItem>
   </Grid>
   )

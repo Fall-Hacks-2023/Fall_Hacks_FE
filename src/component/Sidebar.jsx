@@ -5,6 +5,8 @@ import {FaUserFriends,FaStar} from "react-icons/fa";
 import {IoIosSettings,IoMdExit} from "react-icons/io"
 import styles from "./Sidebar.module.css";
 import {motion} from "framer-motion";
+import { axiosInstance } from '..';
+import { useNavigate } from 'react-router-dom';
 
 const listItemVariant ={
     onHover:{
@@ -21,9 +23,23 @@ const listItemVariant ={
         duration: 1
       }
     }
-  }
+}
 
 const Sidebar = () => {
+    const navigate = useNavigate();
+
+    const logOut = async ()=>{
+        try{
+            const {data} = await axiosInstance.delete("/auth/logout");
+            navigate("/login",{replace:true});
+            console.log("logged out");
+        }
+        catch(err){
+            console.log("logout failed");
+            console.log(err);
+        }
+    }
+
     return (
     <div className={styles["sidebar-container"]}>
         <ul className={styles["sidebar-list-container"]}>
@@ -51,7 +67,7 @@ const Sidebar = () => {
                     My Habits
                 </span>
             </motion.li>
-            <motion.li onClick={(e)=>{e.preventDefault();}} variants={listItemVariant} whileHover="onHover" className={styles["sidebar-item"]}>
+            <motion.li onClick={(e)=>{e.preventDefault(); logOut()}} variants={listItemVariant} whileHover="onHover" className={styles["sidebar-item"]}>
                 <div className={`${styles["sidebar-icon-container"]} ${styles["item-four"]}`}>
                     <IoMdExit className={styles["sidebar-icons"]}/>
                 </div>

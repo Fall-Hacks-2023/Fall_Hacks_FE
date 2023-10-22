@@ -19,8 +19,8 @@ const Home = () => {
   }, []);
   return (
     <>
-      <NavBar />
-      {user ? <Dashboard /> : <Dashboard />}
+      <NavBar firstName={user? user.firstName : null} lastName={user? user.lastName: null} />
+      {user ? <Dashboard /> : <Generic />}
     </>
   );
 };
