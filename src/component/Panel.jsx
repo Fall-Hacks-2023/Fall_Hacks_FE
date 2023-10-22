@@ -13,6 +13,13 @@ export default function Panel() {
         </div>
       </div>
       <div className="habits-cotainer">
+        <div className="habit-headers">
+            <div><span>Title</span></div>
+            <div><span>Created At</span></div>
+            <div><span>Due by</span></div>
+            <div><span>Time spent</span></div>
+            <div id="remove-header"><span>Remove</span></div>
+        </div>
         <List />
       </div>
     </div>
