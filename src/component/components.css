@@ -44,7 +44,18 @@
     flex: 1;
     height: 400px;
     background-color: #1a1c1ea9;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
     border-radius: 20px;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+}
+.stat-container-1 > p{
+    font-size: 15px;
+
 }
 .habit-headers > div {
     flex: 1;

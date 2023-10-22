@@ -17,7 +17,7 @@ const List = () => {
 
   const deleteHabit = async (id) => {
     try {
-      const { data } = await axiosInstance.delete(`/habit/${id}`);
+      const {data} = await axiosInstance.delete(`/habit/${id}`);
       console.log(id);
       fetchData();
     } catch (err) {
